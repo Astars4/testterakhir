@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
   timelineWrapper.addEventListener("mouseup", endDrag);
   timelineWrapper.addEventListener("touchend", endDrag);
   timelineWrapper.addEventListener("mouseleave", endDrag);
+  timelineWrapper.addEventListener("touchcancel", endDrag);
 
   function startDrag(e) {
     isDragging = true;
