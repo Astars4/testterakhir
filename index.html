@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sejarah Indonesia</title>
+  </head>
+  <body class="font-mono">
+    <div
+      id="bg"
+      class="flex flex-col items-center justify-center w-screen min-h-screen px-4 bg-center bg-cover sm:px-6 lg:px-10"
+      style="background-image: url('img/Perdagangan dan Jalur Rempah 2.jpg')"
+    >
+      <h1
+        class="mb-10 text-2xl font-semibold text-center text-black mt-18 sm:text-2xl md:text-3xl lg:text-4xl"
+      >
+        Sejarah Indonesia
+      </h1>
+      <div class="w-full max-w-6xl">
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <button
+            onclick="handleMenu('materi')"
+            class="w-full px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
+          >
+            Materi
+          </button>
+          <button
+            onclick="handleMenu('materiVideo')"
+            class="w-full px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
+          >
+            Materi Video
+          </button>
+          <button
+            onclick="handleMenu('quiz')"
+            class="w-full px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
+          >
+            Quiz
+          </button>
+          <button
+            onclick="handleMenu('timeline')"
+            class="w-full px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
+          >
+            Timeline
+          </button>
+          <button
+            onclick="handleMenu('developer')"
+            class="w-full px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
+          >
+            Developer
+          </button>
+        </div>
+
+        <div
+          id="output"
+          class="w-full p-4 bg-white rounded-lg shadow-md min-h-[100px] relative overflow-hidden mb-20"
+        >
+          <div id="materiContent" class="content">
+            <div class="flex flex-col md:flex-row">
+              <div class="w-full md:w-1/3 lg:w-1/4">
+                <h2 class="mb-4 text-xl font-bold">Daftar Materi</h2>
+                <div class="space-y-2">
+                  <div
+                    onclick="showMateri(1)"
+                    class="p-2 rounded materi-nav active"
+                    id="nav1"
+                  >
+                    1. Masa Pra Aksara
+                  </div>
+                  <div
+                    onclick="showMateri(2)"
+                    class="p-2 rounded materi-nav"
+                    id="nav2"
+                  >
+                    2. Masa Hindu-Buddha
+                  </div>
+                  <div
+                    onclick="showMateri(3)"
+                    class="p-2 rounded materi-nav"
+                    id="nav3"
+                  >
+                    3. Masa Islam
+                  </div>
+                  <div
+                    onclick="showMateri(4)"
+                    class="p-2 rounded materi-nav"
+                    id="nav4"
+                  >
+                    4. Kesultanan di Nusantara
+                  </div>
+                  <div
+                    onclick="showMateri(5)"
+                    class="p-2 rounded materi-nav"
+                    id="nav5"
+                  >
+                    5. Perdagangan dan Jalur Rempah
+                  </div>
+                  <div
+                    onclick="showMateri(6)"
+                    class="p-2 rounded materi-nav"
+                    id="nav6"
+                  >
+                    6. Penjajahan Bangsa Barat
+                  </div>
+                  <div
+                    onclick="showMateri(7)"
+                    class="p-2 rounded materi-nav"
+                    id="nav7"
+                  >
+                    7. Organisasi Pergerakan Nasional
+                  </div>
+                  <div
+                    onclick="showMateri(8)"
+                    class="p-2 rounded materi-nav"
+                    id="nav8"
+                  >
+                    8. Penjajahan Jepang
+                  </div>
+                  <div
+                    onclick="showMateri(9)"
+                    class="p-2 rounded materi-nav"
+                    id="nav9"
+                  >
+                    9. Proklamasi Kemerdekaan dan Perjuangan Mempertahankan
+                    Kemerdekaan
+                  </div>
+                  <div
+                    onclick="showMateri(10)"
+                    class="p-2 rounded materi-nav"
+                    id="nav10"
+                  >
+                    10. Gerakan 30 September 1965 (G30S/PKI)
+                  </div>
+                  <div
+                    onclick="showMateri(11)"
+                    class="p-2 rounded materi-nav"
+                    id="nav11"
+                  >
+                    11. Demokrasi di Indonesia
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-full md:w-2/3">
+                <div class="slide-presentation">
+                  <!-- Slide Materi -->
+                  <div class="slide" id="materi1">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <div style="text-align: center">
+                        <img
+                          src="img/Zaman Prasejarah 2.jpg"
+                          alt="Zaman Prasejarah"
+                          width="280px"
+                          style="
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                          "
+                          class="w-full h-auto"
+                        />
+                      </div>
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi2">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab4', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab5', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab6', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab4" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab5" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab6" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi3">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi4">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi5">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi6">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi7">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi8">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+                  <div class="slide" id="materi9">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi10">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="materi11">
+                    <h2 class="mb-4 text-xl font-bold">1. Masa Pra Aksara</h2>
+                    <div class="flex mb-4 border-b">
+                      <button
+                        class="px-4 py-2 font-medium border-b-2 border-blue-500 tab-btn"
+                        onclick="openTab('tab1', this)"
+                      >
+                        Ringkasan
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab2', this)"
+                      >
+                        Manusia Purba
+                      </button>
+                      <button
+                        class="px-4 py-2 font-medium tab-btn"
+                        onclick="openTab('tab3', this)"
+                      >
+                        Artefak
+                      </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div id="tab1" class="tab-content">
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                      />
+                      <p class="mb-4">
+                        Masa pra aksara adalah periode sebelum manusia mengenal
+                        tulisan. Pada masa ini, kehidupan manusia bergantung
+                        pada alam dengan berburu dan meramu. Seiring waktu,
+                        mereka mulai bertani dan beternak. Periodisasi zaman
+                        batu dibagi menjadi Paleolitikum (zaman batu tua),
+                        Mesolitikum (zaman batu tengah), Neolitikum (zaman batu
+                        baru), dan Megalitikum (zaman batu besar) yang ditandai
+                        dengan munculnya budaya megalitik seperti menhir dan
+                        dolmen.
+                      </p>
+                    </div>
+
+                    <div id="tab2" class="hidden tab-content">
+                      <p>
+                        Manusia purba di Indonesia terdiri dari beberapa
+                        jenis...
+                      </p>
+                    </div>
+
+                    <div id="tab3" class="hidden tab-content">
+                      <p>Beberapa artefak penting dari masa pra aksara...</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                      <button
+                        onclick="prevSlide()"
+                        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                      >
+                        Sebelumnya
+                      </button>
+                      <button
+                        onclick="nextSlide()"
+                        class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                      >
+                        Selanjutnya
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide Indicator -->
+                <div class="slide-indicator">
+                  <div
+                    class="indicator-dot active"
+                    onclick="goToSlide(0)"
+                  ></div>
+                  <div class="indicator-dot" onclick="goToSlide(1)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(2)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(3)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(4)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(5)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(6)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(7)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(8)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(9)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(10)"></div>
+                  <div class="indicator-dot" onclick="goToSlide(11)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Konten Materi Video -->
+          <div id="materiVideoContent" class="hidden content">
+            <h2 class="text-xl font-bold">Materi Video Sejarah Indonesia</h2>
+            <p>Video Pembelajaran Sejarah Indonesia</p>
+            <div class="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2">
+              <div class="p-4 border rounded-lg aspect-w-16 aspect-h-9">
+                <h3 class="mb-2 font-bold">Masa Pra Aksara</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/3le_74ek3J0?si=sdiurmGLWfb-WmbD"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Masa Hindu-Buddha</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/Qg3_Ef9uI9w?si=1kZXYKE_DDSUP4On"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Masa Islam</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/Cc11elGZGLo?si=SkkF0nokNZmztC0O"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Kesultanan Di Nusantara</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/Twx3EMkQwyk?si=RdX_YyTTXw5CKruf"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Perdagangan Dan Jalur Rempah</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/fj2xxbx_OHQ?si=O6pu56UcCmJLD3zT"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Penjajahan Bangsa Barat</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/0ckDy7xpwJw?si=QnmTFUuLXujQLNcL"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Organisasi Pergerakan Nasional</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/fWCzd284OZQ?si=rVoCKZBWlcPUpM3n"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Penjajahan Jepang sma</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/s7p05PWp1t0?si=dF-P9t1A34ii8DX6"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">
+                  Proklamasi Kemerdekaan dan Perjuangan Mempertahankan
+                  Kemerdekaan
+                </h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/OVL5ruoBXRo?si=KRJ9zCpPPHDve7Hj"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">
+                  Gerakan 30 September 1965 (G30S/PKI)
+                </h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/KulfHubqC-w?si=lpiJbXs4oHcybQYi"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Demokrasi di Indonesia</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/h32LjRkbNCM?si=ug08hS_A-j-YM5hW"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="p-4 border rounded-lg">
+                <h3 class="mb-2 font-bold">Sejarah Indonesia</h3>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src="https://www.youtube.com/embed/LlZeVYQJYBI?si=EAC6hNaKiJNY_6c0"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <a
+              href="https://www.youtube.com/results?search_query=sejarah+indonesia"
+              target="_blank"
+              class="inline-block mt-4 text-blue-500 hover:underline"
+            >
+              Jika Ingin Mencari Tentang Video Sejarah Indonesia Lainnya Segera
+              Nonton di YouTube Klik Link Ini
+            </a>
+          </div>
+
+          <!-- Konten Quiz -->
+          <div id="quizContent" class="hidden content">
+            <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+              <h1 class="mb-6 text-2xl font-bold text-center">
+                Kuis Sejarah Indonesia
+              </h1>
+
+              <div id="difficultySelection" class="text-center">
+                <h2 class="mb-4 text-xl font-semibold">
+                  Pilih Tingkat Kesulitan:
+                </h2>
+                <div class="space-y-3">
+                  <button
+                    onclick="startQuiz('easy')"
+                    class="w-full p-3 text-white bg-green-500 rounded-lg hover:bg-green-600"
+                  >
+                    Mudah
+                  </button>
+                  <button
+                    onclick="startQuiz('medium')"
+                    class="w-full p-3 text-white bg-yellow-500 rounded-lg hover:bg-yellow-600"
+                  >
+                    Menengah
+                  </button>
+                  <button
+                    onclick="startQuiz('hard')"
+                    class="w-full p-3 text-white bg-red-500 rounded-lg hover:bg-red-600"
+                  >
+                    Sulit
+                  </button>
+                </div>
+              </div>
+
+              <div id="quizContainer" class="hidden"></div>
+
+              <div id="quizResult" class="hidden text-center">
+                <h2 class="mb-4 text-xl font-bold">Hasil Kuis</h2>
+                <div id="resultText" class="mb-6"></div>
+                <button
+                  onclick="resetQuiz()"
+                  class="p-3 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+                >
+                  Ulangi Kuis
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Konten Timeline -->
+          <div id="timelineContent" class="hidden content">
+            <h2 class="mb-6 text-xl font-bold">Timeline Sejarah Indonesia</h2>
+
+            <div class="timeline-container">
+              <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                <ul class="timeline">
+                  <li data-date="Abad ke-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Kerajaan Kutai</h3>
+                      <small>Abad ke-4 Masehi</small>
+                      <p>
+                        Kerajaan Hindu pertama di Indonesia yang terletak di
+                        Kalimantan Timur. Dikenal dari prasasti Yupa yang
+                        merupakan bukti tertulis tertua.
+                      </p>
+                      <span class="close-btn"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </div>
+                  </li>
+
+                  <li data-date="Abad ke-7">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Kerajaan Sriwijaya</h3>
+                      <small>Abad ke-7 hingga ke-13</small>
+                      <p>
+                        Kerajaan maritim Budha yang menguasai perdagangan di
+                        Selat Malaka dan Selat Sunda. Pusatnya diperkirakan di
+                        Palembang, Sumatera Selatan.
+                      </p>
+                      <div
+                        class="timeline-image"
+                        style="
+                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Candi_Muaro_Jambi.jpg/320px-Candi_Muaro_Jambi.jpg');
+                        "
+                      ></div>
+                      <span class="close-btn"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </div>
+                  </li>
+
+                  <li data-date="1293">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Kerajaan Majapahit</h3>
+                      <small>1293-1527</small>
+                      <p>
+                        Kerajaan Hindu-Buddha terbesar di Nusantara yang
+                        mencapai puncak kejayaan di bawah Hayam Wuruk dengan
+                        patih Gajah Mada dan Sumpah Palapa.
+                      </p>
+                      <div
+                        class="timeline-image"
+                        style="
+                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Trowulan.jpg/320px-Trowulan.jpg');
+                        "
+                      ></div>
+                      <span class="close-btn"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </div>
+                  </li>
+
+                  <li data-date="1511">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Kedatangan Portugis</h3>
+                      <small>1511</small>
+                      <p>
+                        Portugis menguasai Malaka, menandai awal kolonialisme
+                        Eropa di Nusantara. Mereka kemudian mendirikan pos
+                        dagang di Maluku.
+                      </p>
+                      <div
+                        class="timeline-image"
+                        style="
+                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Fortaleza_de_Malaca.jpg/320px-Fortaleza_de_Malaca.jpg');
+                        "
+                      ></div>
+                      <span class="close-btn"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </div>
+                  </li>
+
+                  <li data-date="1602">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>VOC Berdiri</h3>
+                      <small>1602</small>
+                      <p>
+                        Vereenigde Oostindische Compagnie (VOC) didirikan,
+                        menjadi alat Belanda untuk menguasai perdagangan
+                        rempah-rempah di Nusantara.
+                      </p>
+                      <div
+                        class="timeline-image"
+                        style="
+                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/VOC_Flag.svg/320px-VOC_Flag.svg.png');
+                        "
+                      ></div>
+                      <span class="close-btn"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </div>
+                  </li>
+
+                  <li data-date="1945">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h3>Proklamasi Kemerdekaan</h3>
+                      <small>17 Agustus 1945</small>
+                      <p>
+                        Soekarno dan Hatta memproklamasikan kemerdekaan
+                        Indonesia di Jalan Pegangsaan Timur 56, Jakarta,
+                        menandai lahirnya Republik Indonesia.
+                      </p>
+                      <div
+                        class="timeline-image"
+                        style="
+                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Soekarno-reading-proclamation-text.jpg/320px-Soekarno-reading-proclamation-text.jpg');
+                        "
+                      ></div>
+                      <span class="close-btn"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="developerContent" class="hidden content">
+            <h2 class="text-xl font-bold">Developer</h2>
+            <p>Informasi tentang developer:</p>
+            <div class="p-4 mt-4 bg-gray-100 rounded-lg">
+              <p class="font-semibold">Nama: M. Arifin Bachtiar</p>
+              <p class="font-semibold">NIM: 2305176070</p>
+              <p class="mt-2">
+                Aplikasi ini dibuat untuk memenuhi tugas mata kuliah
+                Pengembangan Multimedia Pembelajaran.
+              </p>
+              <p class="mt-2">Fitur yang tersedia:</p>
+              <ul class="pl-5 mt-1 list-disc">
+                <li>8 Materi Pembelajaran Sejarah Indonesia</li>
+                <li>Koleksi Video Pembelajaran</li>
+                <li>Quiz Interaktif</li>
+                <li>Timeline Sejarah</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-4 bg-[#9fafab] text-black">
+      <div class="container mx-auto text-center">
+        <p>&copy; KELOMPOK 4 - SEJARAH INDONESIA</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="timeline.js"></script>
+    <script src="quiz.js"></script>
+  </body>
+</html>
