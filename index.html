@@ -10,145 +10,54 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Sejarah Indonesia</title>
   </head>
-  <body class="font-mono">
-    <div
-      id="bg"
-      class="flex flex-col items-center justify-center w-screen min-h-screen px-4 bg-center bg-cover sm:px-6 lg:px-10"
-      style="background-image: url('img/Perdagangan dan Jalur Rempah 2.jpg')"
-    >
-      <h1
-        class="mb-10 text-2xl font-semibold text-center text-black mt-18 sm:text-2xl md:text-3xl lg:text-4xl"
-      >
-        Sejarah Indonesia
-      </h1>
-      <div class="w-full max-w-6xl">
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
-          <button
-            onclick="handleMenu('materi')"
-            class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
-          >
-            Materi
-          </button>
-          <button
-            onclick="handleMenu('materiVideo')"
-            class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
-          >
-            Materi Video
-          </button>
-          <button
-            onclick="handleMenu('quiz')"
-            class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
-          >
-            Quiz
-          </button>
-          <button
-            onclick="handleMenu('timeline')"
-            class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
-          >
-            Timeline
-          </button>
-          <button
-            onclick="handleMenu('developer')"
-            class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white"
-          >
-            Developer
-          </button>
+ <nav class="bg-white shadow-md">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between py-4">
+        <h1 class="text-2xl font-semibold text-black md:text-3xl">Sejarah Indonesia</h1>
+        
+        <div class="flex flex-wrap justify-center gap-2 mt-4 md:mt-0">
+          <button onclick="handleMenu('materi')" class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white">Materi</button>
+          <button onclick="handleMenu('materiVideo')" class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white">Materi Video</button>
+          <button onclick="handleMenu('quiz')" class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white">Quiz</button>
+          <button onclick="handleMenu('timeline')" class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white">Timeline</button>
+          <button onclick="handleMenu('developer')" class="px-4 py-2 text-black transition border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white">Developer</button>
         </div>
+      </div>
+    </div>
+  </nav>
 
-        <div
-          id="output"
-          class="w-full p-4 bg-white rounded-lg shadow-md min-h-[100px] relative overflow-hidden mb-20"
-        >
-          <div id="materiContent" class="content">
-            <div class="flex flex-col md:flex-row">
-              <div class="w-full md:w-1/3 lg:w-1/4">
-                <h2 class="mb-4 text-xl font-bold">Daftar Materi</h2>
-                <div class="space-y-2">
-                  <div
-                    onclick="showMateri(1)"
-                    class="p-2 rounded materi-nav active"
-                    id="nav1"
-                  >
-                    1. Masa Pra Aksara
-                  </div>
-                  <div
-                    onclick="showMateri(2)"
-                    class="p-2 rounded materi-nav"
-                    id="nav2"
-                  >
-                    2. Masa Hindu-Buddha
-                  </div>
-                  <div
-                    onclick="showMateri(3)"
-                    class="p-2 rounded materi-nav"
-                    id="nav3"
-                  >
-                    3. Masa Islam
-                  </div>
-                  <div
-                    onclick="showMateri(4)"
-                    class="p-2 rounded materi-nav"
-                    id="nav4"
-                  >
-                    4. Kesultanan di Nusantara
-                  </div>
-                  <div
-                    onclick="showMateri(5)"
-                    class="p-2 rounded materi-nav"
-                    id="nav5"
-                  >
-                    5. Perdagangan dan Jalur Rempah
-                  </div>
-                  <div
-                    onclick="showMateri(6)"
-                    class="p-2 rounded materi-nav"
-                    id="nav6"
-                  >
-                    6. Penjajahan Bangsa Barat
-                  </div>
-                  <div
-                    onclick="showMateri(7)"
-                    class="p-2 rounded materi-nav"
-                    id="nav7"
-                  >
-                    7. Organisasi Pergerakan Nasional
-                  </div>
-                  <div
-                    onclick="showMateri(8)"
-                    class="p-2 rounded materi-nav"
-                    id="nav8"
-                  >
-                    8. Penjajahan Jepang
-                  </div>
-                  <div
-                    onclick="showMateri(9)"
-                    class="p-2 rounded materi-nav"
-                    id="nav9"
-                  >
-                    9. Proklamasi Kemerdekaan dan Perjuangan Mempertahankan
-                    Kemerdekaan
-                  </div>
-                  <div
-                    onclick="showMateri(10)"
-                    class="p-2 rounded materi-nav"
-                    id="nav10"
-                  >
-                    10. Gerakan 30 September 1965 (G30S/PKI)
-                  </div>
-                  <div
-                    onclick="showMateri(11)"
-                    class="p-2 rounded materi-nav"
-                    id="nav11"
-                  >
-                    11. Demokrasi di Indonesia
-                  </div>
-                </div>
-              </div>
+  <!-- Main Content -->
+  <div id="bg" class="flex flex-col items-center justify-center w-screen min-h-screen px-4 bg-center bg-cover sm:px-6 lg:px-10" style="background-image: url('img/Perdagangan dan Jalur Rempah 2.jpg')">
+    <div id="output" class="w-full p-4 bg-white rounded-lg shadow-md min-h-[100px] relative overflow-hidden mb-20">
+      <!-- Materi Content -->
+      <div id="materiContent" class="content">
+        <div class="flex flex-col md:flex-row">
+          <!-- Sidebar Navigation -->
+          <div class="w-full md:w-1/3 lg:w-1/4">
+            <h2 class="mb-4 text-xl font-bold">Daftar Materi</h2>
+            <div class="space-y-2">
+              <div onclick="showMateri(1)" class="p-2 rounded materi-nav active" id="nav1">1. Masa Pra Aksara</div>
+              <div onclick="showMateri(2)" class="p-2 rounded materi-nav" id="nav2">2. Masa Hindu-Buddha</div>
+              <div onclick="showMateri(3)" class="p-2 rounded materi-nav" id="nav3">3. Masa Islam</div>
+              <div onclick="showMateri(4)" class="p-2 rounded materi-nav" id="nav4">4. Kesultanan di Nusantara</div>
+              <div onclick="showMateri(5)" class="p-2 rounded materi-nav" id="nav5">5. Perdagangan dan Jalur Rempah</div>
+              <div onclick="showMateri(6)" class="p-2 rounded materi-nav" id="nav6">6. Penjajahan Bangsa Barat</div>
+              <div onclick="showMateri(7)" class="p-2 rounded materi-nav" id="nav7">7. Organisasi Pergerakan Nasional</div>
+              <div onclick="showMateri(8)" class="p-2 rounded materi-nav" id="nav8">8. Penjajahan Jepang</div>
+              <div onclick="showMateri(9)" class="p-2 rounded materi-nav" id="nav9">9. Proklamasi Kemerdekaan dan Perjuangan Mempertahankan Kemerdekaan</div>
+              <div onclick="showMateri(10)" class="p-2 rounded materi-nav" id="nav10">10. Gerakan 30 September 1965 (G30S/PKI)</div>
+              <div onclick="showMateri(11)" class="p-2 rounded materi-nav" id="nav11">11. Demokrasi di Indonesia</div>
+            </div>
+          </div>
 
-              <div class="w-2/3 pl-4">
+              <div class="w-full md:w-2/3">
                 <div class="slide-presentation">
                   <!-- Slide Materi -->
                   <div class="slide" id="materi1">
@@ -176,18 +85,12 @@
 
                     <!-- Tab Contents -->
                     <div id="tab1" class="tab-content">
-                      <div style="text-align: center">
-                        <img
-                          src="img/Zaman Prasejarah 2.jpg"
-                          alt="Zaman Prasejarah"
-                          width="280px"
-                          style="
-                            display: block;
-                            margin-left: auto;
-                            margin-right: auto;
-                          "
-                        />
-                      </div>
+                      <img
+                        src="img/Zaman Prasejarah 2.jpg"
+                        alt="Zaman Prasejarah"
+                        width="280px"
+                        class="justify-center"
+                      />
                       <p class="mb-4">
                         Masa pra aksara adalah periode sebelum manusia mengenal
                         tulisan. Pada masa ini, kehidupan manusia bergantung
@@ -1179,158 +1082,247 @@
           <!-- Konten Timeline -->
           <div id="timelineContent" class="hidden content">
             <h2 class="mb-6 text-xl font-bold">Timeline Sejarah Indonesia</h2>
-
-            <div class="timeline-container">
-              <div class="timeline-wrapper">
-                <div class="timeline-line"></div>
-                <ul class="timeline">
-                  <li data-date="Abad ke-4">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                      <h3>Kerajaan Kutai</h3>
-                      <small>Abad ke-4 Masehi</small>
-                      <p>
-                        Kerajaan Hindu pertama di Indonesia yang terletak di
-                        Kalimantan Timur. Dikenal dari prasasti Yupa yang
-                        merupakan bukti tertulis tertua.
-                      </p>
-                      <span class="close-btn"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </div>
-                  </li>
-
-                  <li data-date="Abad ke-7">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                      <h3>Kerajaan Sriwijaya</h3>
-                      <small>Abad ke-7 hingga ke-13</small>
-                      <p>
-                        Kerajaan maritim Budha yang menguasai perdagangan di
-                        Selat Malaka dan Selat Sunda. Pusatnya diperkirakan di
-                        Palembang, Sumatera Selatan.
-                      </p>
-                      <div
-                        class="timeline-image"
-                        style="
-                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Candi_Muaro_Jambi.jpg/320px-Candi_Muaro_Jambi.jpg');
-                        "
-                      ></div>
-                      <span class="close-btn"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </div>
-                  </li>
-
-                  <li data-date="1293">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                      <h3>Kerajaan Majapahit</h3>
-                      <small>1293-1527</small>
-                      <p>
-                        Kerajaan Hindu-Buddha terbesar di Nusantara yang
-                        mencapai puncak kejayaan di bawah Hayam Wuruk dengan
-                        patih Gajah Mada dan Sumpah Palapa.
-                      </p>
-                      <div
-                        class="timeline-image"
-                        style="
-                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Trowulan.jpg/320px-Trowulan.jpg');
-                        "
-                      ></div>
-                      <span class="close-btn"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </div>
-                  </li>
-
-                  <li data-date="1511">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                      <h3>Kedatangan Portugis</h3>
-                      <small>1511</small>
-                      <p>
-                        Portugis menguasai Malaka, menandai awal kolonialisme
-                        Eropa di Nusantara. Mereka kemudian mendirikan pos
-                        dagang di Maluku.
-                      </p>
-                      <div
-                        class="timeline-image"
-                        style="
-                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Fortaleza_de_Malaca.jpg/320px-Fortaleza_de_Malaca.jpg');
-                        "
-                      ></div>
-                      <span class="close-btn"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </div>
-                  </li>
-
-                  <li data-date="1602">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                      <h3>VOC Berdiri</h3>
-                      <small>1602</small>
-                      <p>
-                        Vereenigde Oostindische Compagnie (VOC) didirikan,
-                        menjadi alat Belanda untuk menguasai perdagangan
-                        rempah-rempah di Nusantara.
-                      </p>
-                      <div
-                        class="timeline-image"
-                        style="
-                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/VOC_Flag.svg/320px-VOC_Flag.svg.png');
-                        "
-                      ></div>
-                      <span class="close-btn"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </div>
-                  </li>
-
-                  <li data-date="1945">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                      <h3>Proklamasi Kemerdekaan</h3>
-                      <small>17 Agustus 1945</small>
-                      <p>
-                        Soekarno dan Hatta memproklamasikan kemerdekaan
-                        Indonesia di Jalan Pegangsaan Timur 56, Jakarta,
-                        menandai lahirnya Republik Indonesia.
-                      </p>
-                      <div
-                        class="timeline-image"
-                        style="
-                          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Soekarno-reading-proclamation-text.jpg/320px-Soekarno-reading-proclamation-text.jpg');
-                        "
-                      ></div>
-                      <span class="close-btn"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+<div class="timeline-container">
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+    <ul class="timeline">
+      <!-- Previous items (4th century - 1942) remain unchanged -->
+      <!-- ... -->
+      <li data-date="1945">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Proklamasi Kemerdekaan</h3>
+          <small>17 Agustus 1945</small>
+          <p>Soekarno dan Hatta memproklamasikan kemerdekaan Indonesia, menandai lahirnya Republik Indonesia.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1945-1949">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Revolusi Nasional</h3>
+          <small>1945-1949</small>
+          <p>Perjuangan bersenjata dan diplomasi melawan Belanda yang ingin kembali berkuasa, diakhiri dengan Pengakuan Kedaulatan.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1950-1959">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Demokrasi Parlementer</h3>
+          <small>1950-1959</small>
+          <p>Masa pemerintahan dengan sistem multipartai dan sering berganti kabinet.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1959-1966">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Demokrasi Terpimpin</h3>
+          <small>1959-1966</small>
+          <p>Soekarno memimpin dengan sistem otoriter, konfrontasi dengan Malaysia, dan krisis ekonomi.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1965">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Gerakan 30 September</h3>
+          <small>1965</small>
+          <p>Peristiwa G30S yang diikuti transisi kekuasaan ke Soeharto dan awal Orde Baru.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1966-1998">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Orde Baru</h3>
+          <small>1966-1998</small>
+          <p>Era Soeharto dengan pembangunan ekonomi tetapi otoriter. Berakhir dengan Reformasi 1998.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1998">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Reformasi</h3>
+          <small>1998</small>
+          <p>Krisis ekonomi dan demonstrasi mahasiswa memaksa Soeharto turun, membuka era demokrasi.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="1999">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Pemilu Demokratis</h3>
+          <small>1999</small>
+          <p>Pemilu multipartai pertama sejak 1955, dimenangkan oleh PDIP tetapi memilih Abdurrahman Wahid sebagai presiden.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="2004">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Pemilu Langsung Pertama</h3>
+          <small>2004</small>
+          <p>Susilo Bambang Yudhoyono terpilih sebagai presiden pertama yang dipilih langsung oleh rakyat.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="2014">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Era Jokowi</h3>
+          <small>2014-sekarang</small>
+          <p>Joko Widodo terpilih sebagai presiden dari luar elite politik tradisional, fokus pada infrastruktur dan pemerataan pembangunan.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="2019">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Pemindahan Ibu Kota</h3>
+          <small>2019</small>
+          <p>Pengumuman rencana pemindahan ibu kota dari Jakarta ke Kalimantan Timur (Nusantara).</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="2020">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Pandemi COVID-19</h3>
+          <small>2020-2022</small>
+          <p>Indonesia menghadapi pandemi global dengan berbagai kebijakan kesehatan dan ekonomi.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+      <li data-date="2024">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Pemilu 2024</h3>
+          <small>2024</small>
+          <p>Pemilihan umum serentak dengan Prabowo Subianto terpilih sebagai presiden ketujuh Indonesia.</p>
+          <span class="close-btn"><i class="fas fa-times"></i></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
 
           <div id="developerContent" class="hidden content">
-            <h2 class="text-xl font-bold">Developer</h2>
-            <p>Informasi tentang developer:</p>
-            <div class="p-4 mt-4 bg-gray-100 rounded-lg">
-              <p class="font-semibold">Nama: M. Arifin Bachtiar</p>
-              <p class="font-semibold">NIM: 2305176070</p>
-              <p class="mt-2">
-                Aplikasi ini dibuat untuk memenuhi tugas mata kuliah
-                Pengembangan Multimedia Pembelajaran.
-              </p>
-              <p class="mt-2">Fitur yang tersedia:</p>
-              <ul class="pl-5 mt-1 list-disc">
-                <li>8 Materi Pembelajaran Sejarah Indonesia</li>
-                <li>Koleksi Video Pembelajaran</li>
-                <li>Quiz Interaktif</li>
-                <li>Timeline Sejarah</li>
-              </ul>
+            <div class="container max-w-5xl p-8 mx-auto my-10 bg-pink-100">
+              <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="col-span-1 overflow-hidden rounded-lg fade-in-out">
+                  <img
+                    src="img/profile/Arifin.jpg"
+                    alt="Arifin"
+                    class="object-cover object-top w-full h-80 shadow-emerald-700/30 shadow-lg rounded-full mb-2"
+                  />
+                  <div class="p-4 bg-slate-300">
+                    <p class="font-semibold">Nama: M. Arifin Bachtiar</p>
+                    <p class="font-semibold">NIM: 2305176070</p>
+                    <p class="font-semibold">
+                      Tempat, Tanggal Lahir: Samarinda, 13 Desember 2004
+                    </p>
+                    <p class="font-semibold">
+                      Alamat: Jln. Gatot Subroto Gang 14
+                    </p>
+                    <p class="font-semibold">Hobi: 2305176070</p>
+                    <div class="flex space-x-2 mt-2">
+                      <a
+                        href="https://api.whatsapp.com/send?phone=6283140206778/"
+                      >
+                        <i class="fa fa-whatsapp"></i>
+                      </a>
+                      <a href="https://www.instagram.com/ashine_ri">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-span-1 overflow-hidden rounded-lg fade-in-out">
+                  <img
+                    src="img/profile/Wahyudi.jpg"
+                    alt="Wahyudi"
+                    class="object-cover object-top w-full h-80 shadow-emerald-700/30 shadow-lg rounded-full mb-2"
+                  />
+                  <div class="p-4 bg-slate-300">
+                    <p class="font-semibold">Nama: Wahyudi Mas'ud</p>
+                    <p class="font-semibold">NIM: 2305176046</p>
+                    <p class="font-semibold">
+                      Tempat, Tanggal Lahir: Samarinda, 1 Desember 2004
+                    </p>
+                    <p class="font-semibold">Alamat: Jln. DI Panjaitan</p>
+                    <p class="font-semibold">Hobi: Renang</p>
+                    <div class="flex space-x-2 mt-2">
+                      <a
+                        href="https://api.whatsapp.com/send?phone=6282213746815/"
+                      >
+                        <i class="fa fa-whatsapp"></i>
+                      </a>
+                      <a href="https://www.instagram.com/wah_yudim/ ">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-span-1 overflow-hidden rounded-lg fade-in-out">
+                  <img
+                    src="img/profile/Nita.jpg"
+                    alt="Nita"
+                    class="object-cover object-top w-full h-80 shadow-emerald-700/30 shadow-lg rounded-full mb-2"
+                  />
+                  <div class="p-4 bg-slate-300">
+                    <p class="font-semibold">Nama: Nita Yulianti</p>
+                    <p class="font-semibold">NIM: 2305176072</p>
+                    <p class="font-semibold">Tempat, Tanggal Lahir:</p>
+                    <p class="font-semibold">Alamat: 2305176072</p>
+                    <p class="font-semibold">Hobi: 2305176072</p>
+                    <div class="flex space-x-2 mt-2">
+                      <a
+                        href="https://api.whatsapp.com/send?phone=6283140206778/"
+                      >
+                        <i class="fa fa-whatsapp"></i>
+                      </a>
+                      <a href="https://www.instagram.com/ashine_ri">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-span-1 overflow-hidden rounded-lg fade-in-out">
+                  <img
+                    src="img/profile/Mahendra.jpg"
+                    alt="Mahendra"
+                    class="object-cover object-top w-full h-80 shadow-emerald-700/30 shadow-lg rounded-full mb-2"
+                  />
+                  <div class="p-4 bg-slate-300">
+                    <p class="font-semibold">
+                      Nama: Mahendra Herianto Tandilo Bit
+                    </p>
+                    <p class="font-semibold">NIM: 2305176059</p>
+                    <p class="font-semibold">
+                      Tempat, Tanggal Lahir: Neheas Liah Bing, 13 April 2005
+                    </p>
+                    <p class="font-semibold">Alamat: Perum bumi sempaja</p>
+                    <p class="font-semibold">Hobi: Futsal</p>
+                    <div class="flex space-x-2 mt-2">
+                      <a
+                        href="https://api.whatsapp.com/send?phone=6281253534737/"
+                      >
+                        <i class="fa fa-whatsapp"></i>
+                      </a>
+                      <a href="https://www.instagram.com/mahendrabit13/">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

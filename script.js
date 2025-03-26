@@ -1,3 +1,8 @@
+function handleMenu(menu) {
+  alert(`Menu ${menu} diklik!`);
+  // Anda bisa mengganti ini dengan logika navigasi sesuai kebutuhan
+}
+
 const backgrounds = [
   "img/Pergerakan Nasional 3.jpg",
   "img/Zaman Prasejarah 3.jpg",
@@ -43,6 +48,35 @@ function handleMenu(menu) {
     goToTimelineSlide(0);
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Efek Fade In saat halaman pertama kali dimuat
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 1.5s";
+  document.body.style.opacity = 1;
+
+  const fadeElements = document.querySelectorAll(".fade-in-out");
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight - 100 && rect.bottom > 100;
+  }
+
+  function handleScroll() {
+    fadeElements.forEach((el) => {
+      if (isElementInViewport(el)) {
+        el.classList.add("opacity-100");
+        el.classList.remove("opacity-0");
+      } else {
+        el.classList.add("opacity-0");
+        el.classList.remove("opacity-100");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Panggil sekali saat pertama kali halaman dimuat
+});
 
 // ========== Fungsi untuk Slide Materi ==========
 let currentSlideIndex = 0;

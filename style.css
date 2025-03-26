@@ -42,6 +42,22 @@ header {
   display: block;
 }
 
+.fade-in-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-out.opacity-100 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-out.opacity-0 {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
 .slide {
   position: absolute;
   top: 0;
@@ -111,14 +127,6 @@ header {
   color: white;
 }
 
-.timeline-event {
-  padding: 15px;
-  margin-bottom: 15px;
-  border-left: 4px solid #3b82f6;
-  background-color: #f8fafc;
-  border-radius: 0 8px 8px 0;
-}
-
 .tab-btn {
   transition: all 0.3s;
 }
@@ -128,6 +136,18 @@ header {
 .tab-content {
   margin-bottom: 6rem;
   transition: all 0.3s;
+}
+
+.timeline {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  padding: 0 100px;
+  list-style: none;
+  transition: left 0.3s ease;
+  z-index: 2;
 }
 
 .timeline-year {
@@ -152,6 +172,14 @@ header {
   -webkit-overflow-scrolling: touch;
 }
 
+.timeline-event {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  border-radius: 0 8px 8px 0;
+}
+
 .timeline-line {
   position: absolute;
   top: 40%;
@@ -161,18 +189,6 @@ header {
   background-color: black;
   transform: translateY(-50%);
   z-index: 1;
-}
-
-.timeline {
-  display: flex;
-  position: absolute;
-  left: 0;
-  top: 40%;
-  transform: translateY(-50%);
-  padding: 0 100px;
-  list-style: none;
-  transition: left 0.3s ease;
-  z-index: 2;
 }
 
 .timeline li {
@@ -222,11 +238,11 @@ header {
   height: 280px;
   background: linear-gradient(
     145deg,
-    rgba(142, 45, 226, 0.95) 0%,
-    rgba(74, 0, 224, 0.95) 100%
+    rgba(72, 187, 120, 0.95) 0%,
+    rgba(16, 128, 67, 0.95) 100%
   );
+  box-shadow: 0 5px 15px rgba(16, 128, 67, 0.3);
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(14, 14, 226, 0.4);
   padding: 1.2rem;
   opacity: 0;
   visibility: hidden;
@@ -239,19 +255,23 @@ header {
   color: white;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-content small {
   display: block;
-  color: gray;
   margin-bottom: 1rem;
   font-size: 0.8rem;
 }
 
 .timeline-content p {
-  color: gray;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+}
+
+.timeline-content small,
+.timeline-content p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .close-btn {
