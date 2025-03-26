@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentPosition = 0;
   let activeItem = null;
+  let isDragging = false;
+  let startX;
+  let startPosition;
 
   // Initialize timeline
   function initTimeline() {
-    // Set first item as active
     if (timelineItems.length > 0) {
       setActiveItem(timelineItems[0]);
     }
-
-    // Center the timeline
     centerTimeline();
   }
 
@@ -22,18 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (activeItem) {
       activeItem.classList.remove("active");
     }
-
     item.classList.add("active");
     activeItem = item;
-
-    // Center the active item
     centerActiveItem();
   }
 
   // Center the active item in view
   function centerActiveItem() {
     if (!activeItem) return;
-
     const wrapperWidth = timelineWrapper.clientWidth;
     const itemOffset = activeItem.offsetLeft;
     const itemWidth = activeItem.clientWidth;
@@ -56,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const timelineWidth = timeline.scrollWidth;
     const wrapperWidth = timelineWrapper.clientWidth;
 
-    // Limit scrolling
     const maxPosition = 0;
     const minPosition = -(timelineWidth - wrapperWidth);
 
@@ -64,19 +59,38 @@ document.addEventListener("DOMContentLoaded", function () {
       maxPosition,
       Math.max(minPosition, currentPosition)
     );
-
     timeline.style.transform = `translateX(${currentPosition}px) translateY(-50%)`;
+  }
+
+  // Handle item click/tap
+  function handleItemInteraction(item, e) {
+    if (
+      isDragging &&
+      Math.abs(e.clientX || e.touches[0].clientX - startX) > 10
+    ) {
+      return;
+    }
+    if (item === activeItem) {
+      item.classList.remove("active");
+      activeItem = null;
+    } else {
+      setActiveItem(item);
+    }
   }
 
   // Event listeners for timeline items
   timelineItems.forEach((item) => {
-    item.addEventListener("click", function () {
-      if (item === activeItem) {
-        item.classList.remove("active");
-        activeItem = null;
-      } else {
-        setActiveItem(item);
-      }
+    item.addEventListener("click", function (e) {
+      handleItemInteraction(item, e);
+    });
+
+    // Touch events for mobile
+    item.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+    });
+
+    item.addEventListener("touchend", function (e) {
+      handleItemInteraction(item, e);
     });
 
     // Close button
@@ -90,32 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Keyboard arrow navigation
-  document.addEventListener("keydown", function (e) {
-    const wrapperWidth = timelineWrapper.clientWidth;
-
-    if (e.key === "ArrowLeft") {
-      // Move timeline to the left
-      currentPosition += wrapperWidth * 0.5;
-      updateTimelinePosition();
-    } else if (e.key === "ArrowRight") {
-      // Move timeline to the right
-      currentPosition -= wrapperWidth * 0.5;
-      updateTimelinePosition();
-    }
-  });
-
   // Touch and mouse events for horizontal scrolling
-  let isDragging = false;
-  let startX;
-  let startPosition;
-
   timelineWrapper.addEventListener("mousedown", startDrag);
-  timelineWrapper.addEventListener("touchstart", startDrag);
-
+  timelineWrapper.addEventListener("touchstart", startDrag, { passive: false });
   timelineWrapper.addEventListener("mousemove", drag);
-  timelineWrapper.addEventListener("touchmove", drag);
-
+  timelineWrapper.addEventListener("touchmove", drag, { passive: false });
   timelineWrapper.addEventListener("mouseup", endDrag);
   timelineWrapper.addEventListener("touchend", endDrag);
   timelineWrapper.addEventListener("mouseleave", endDrag);
@@ -131,11 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function drag(e) {
     if (!isDragging) return;
-
     const x = e.clientX || e.touches[0].clientX;
     const dx = x - startX;
     currentPosition = startPosition + dx;
     updateTimelinePosition();
+    e.preventDefault(); // Prevent scrolling
   }
 
   function endDrag() {
