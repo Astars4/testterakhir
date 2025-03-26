@@ -1,6 +1,5 @@
 function handleMenu(menu) {
   alert(`Menu ${menu} diklik!`);
-  // Anda bisa mengganti ini dengan logika navigasi sesuai kebutuhan
 }
 
 const backgrounds = [
@@ -11,20 +10,15 @@ const backgrounds = [
 ];
 
 let currentIndex = 0;
-const bgElement = document.getElementById("bg"); // Perhatikan di sini kita memilih elemen bg
+const bgElement = document.getElementById("bg");
 
 function changeBackground() {
-  // Pindah ke gambar berikutnya
   currentIndex = (currentIndex + 1) % backgrounds.length;
-
-  // Ubah background image
   bgElement.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
 }
 
-// Mulai slideshow setiap 5 detik
 setInterval(changeBackground, 5000);
 
-// Fungsi untuk menangani pilihan menu
 function handleMenu(menu) {
   const contents = document.querySelectorAll("#output .content");
   contents.forEach((content) => {

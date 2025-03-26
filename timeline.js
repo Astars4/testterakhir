@@ -64,10 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle item click/tap
   function handleItemInteraction(item, e) {
-    if (
-      isDragging &&
-      Math.abs(e.clientX || e.touches[0].clientX - startX) > 10
-    ) {
+    const xPosition = e.clientX || (e.touches && e.touches[0].clientX);
+    if (isDragging && Math.abs(xPosition - startX) > 10) {
       return;
     }
     if (item === activeItem) {

@@ -1,10 +1,14 @@
-// Data kuis dengan level kesulitan berbeda
 const quizDatabase = {
   easy: [
     {
-      question: "Siapa yang membacakan teks Proklamasi Kemerdekaan Indonesia?",
-      options: ["Soekarno", "Mohammad Hatta", "Sutan Sjahrir", "Bung Tomo"],
-      answer: "Soekarno",
+      question: "Masa pra aksara adalah zaman sebelum manusia?",
+      options: [
+        "mengenal api",
+        "mengenal tulisan",
+        "mengenal berburu",
+        "mengenal pertanian",
+      ],
+      answer: "mengenal",
     },
     {
       question: "Kerajaan Hindu tertua di Indonesia adalah?",
@@ -12,25 +16,34 @@ const quizDatabase = {
       answer: "Kutai",
     },
     {
-      question: "Sumpah Pemuda terjadi pada tahun?",
-      options: ["1928", "1945", "1908", "1918"],
-      answer: "1928",
-    },
-    {
-      question:
-        "Pahlawan nasional dari Aceh yang dijuluki 'Singa Aceh' adalah?",
+      question: "Islam pertama kali masuk ke Indonesia melalui?",
       options: [
-        "Cut Nyak Dhien",
-        "Teuku Umar",
-        "Pangeran Diponegoro",
-        "Sultan Hasanuddin",
+        "penaklukan militer",
+        "perdagangan",
+        "kolonialisme",
+        "penyebaran agama oleh perintah",
       ],
-      answer: "Cut Nyak Dhien",
+      answer: "perdagangan",
     },
     {
-      question: "Ibu kota Indonesia pertama setelah kemerdekaan adalah?",
-      options: ["Jakarta", "Yogyakarta", "Bandung", "Surabaya"],
-      answer: "Jakarta",
+      question: "Bangsa Eropa datang ke Indonesia karena tertarik dengan ?",
+      options: [
+        "keindahan alam",
+        "kekayaan rempah - rempah",
+        "budaya lokal",
+        "sistem pemerintahan",
+      ],
+      answer: "kekayaan rempah - rempah",
+    },
+    {
+      question: "Proklamasi kemerdekaan Indonesia terjadi pada tanggal?",
+      options: [
+        "17 Agustus 1945",
+        "10 November 1945",
+        "28 Oktober 1928",
+        "1 Juni 1945",
+      ],
+      answer: "17 Agustus 1945",
     },
   ],
   medium: [
@@ -64,6 +77,57 @@ const quizDatabase = {
       question:
         "Konferensi Meja Bundar yang mengakui kedaulatan Indonesia dilaksanakan di?",
       options: ["Den Haag", "Jakarta", "Yogyakarta", "London"],
+      answer: "Den Haag",
+    },
+    {
+      question: "Politik Etis yang diterapkan oleh Belanda bertujuan untuk?",
+      options: [
+        "Memajukan Pribumi",
+        "mengurangi eksploitasi",
+        "Meningkatkan produksi rempah - rempah",
+        "memperkuat sistem tanam paksa",
+      ],
+      answer: "Memajukan Pribumi",
+    },
+    {
+      question: "Sumpah Pemuda pada 28 Oktober 1928 menegaskan?",
+      options: [
+        "Keinginan indonesia untuk merdeka",
+        "Persatuan dalam satu bangsa, satu bahasa, dan satu tanah air",
+        "Perjuangan melawan penjajahan jepang",
+        "Didirikannya partai nasional indonesia",
+      ],
+      answer: "Persatuan dalam satu bangsa, satu bahasa, dan satu tanah air",
+    },
+    {
+      question: "Romusha adalah istilah untuk?",
+      options: [
+        "Tentara jepang",
+        "Organisasi perlawanan rakyat",
+        "Kerja paksa yang di terapkan oleh jepang",
+        "Pelatihan militer PETA",
+      ],
+      answer: "Kerja paksa yang di terapkan oleh jepang",
+    },
+    {
+      question:
+        "Perundingan yang mengakui kedaulatan Indonesia oleh Belanda adalah?",
+      options: [
+        "Perjanjian linggarjati",
+        "Perjanjian renville",
+        "Konferensi meja bundar",
+        "Perundingan roem-roijen",
+      ],
+      answer: "Den Haag",
+    },
+    {
+      question: "Gerakan 30 September 1965 bertujuan untuk?",
+      options: [
+        "mengembalikan kekuasaan kolonial",
+        "melakukan kudeta terhadap pemerintah",
+        "Menyerang jepang",
+        "Menyatukan indonesia dan malaysia",
+      ],
       answer: "Den Haag",
     },
   ],
@@ -110,6 +174,87 @@ const quizDatabase = {
       question: "Kerajaan Islam pertama di Jawa adalah?",
       options: ["Demak", "Mataram Islam", "Pajang", "Cirebon"],
       answer: "Demak",
+    },
+    {
+      question: "VOC mengalami kebangkrutan akibat?",
+      options: [
+        "Keputusan raja belanda",
+        "Korupsi dan utang yang tinggi",
+        "Invasi inggris",
+        "Boikot perdagangan",
+      ],
+      answer: "Korupsi dan utang yang tinggi",
+    },
+    {
+      question: "Sultan Hasanuddin terkenal karena perlawanan terhadap?",
+      options: ["VOC", "Portugis", "Inggris", "Spanyol"],
+      answer: "VOC",
+    },
+    {
+      question:
+        "Perbedaan utama antara sistem tanam paksa dan politik etis adalah?",
+      options: [
+        "Tanam paksa menguntungkan rakyat, politik etis merugikan",
+        "Tanam paksa eksploitasi, politik etis memberi pendidikan",
+        "Politik etis dilakukan sebelum tanam paksa",
+        "Tanam paksa diperkenalkan oleh Inggris",
+      ],
+      answer: "Tanam paksa eksploitasi, politik etis memberi pendidikan",
+    },
+    {
+      question: "Agresi Militer Belanda II berakhir dengan?",
+      options: [
+        "Perjanjian Renville",
+        "Perundingan Roem-Roijen",
+        "Konferensi Meja Bundar",
+        "Perjanjian KMB",
+      ],
+      answer: "Perundingan Roem-Roijen",
+    },
+    {
+      question: "Organisasi yang berperan dalam Perang Kemerdekaan adalah?",
+      options: ["PETA", "PKI", "Partai Demokrat", "Sarekat Dagang Islam"],
+      answer: "PETA",
+    },
+    {
+      question: "Gerakan 30 September 1965 dipimpin oleh?",
+      options: ["DN Aidit", "Soeharto", "Sukarno", "Syahrir"],
+      answer: "DN Aidit",
+    },
+    {
+      question: "Supersemar adalah surat yang memberikan kewenangan kepada?",
+      options: [
+        "Sukarno kepada DN Aidit",
+        "Sukarno kepada Soeharto",
+        " Soeharto kepada MPR",
+        "Sukarno kepada Sjahrir",
+      ],
+      answer: "Sukarno kepada Soeharto",
+    },
+    {
+      question: " Reformasi 1998 dipicu oleh?",
+      options: [
+        "Krisis ekonomi dan politik",
+        "Kudeta militer",
+        "Campur tangan asing",
+        "Pemilu yang gagal",
+      ],
+      answer: "Krisis ekonomi dan politik",
+    },
+    {
+      question: "Peristiwa Malari 1974 terjadi akibat?",
+      options: [
+        "Kerusuhan etnis",
+        "Demonstrasi mahasiswa terhadap ekonomi",
+        "Kudeta militer",
+        "Serangan asing",
+      ],
+      answer: "Demonstrasi mahasiswa terhadap ekonomi",
+    },
+    {
+      question: "Orde Baru berakhir pada tahun?",
+      options: ["1997", "1998", "2000", "2004"],
+      answer: "1998",
     },
   ],
 };
@@ -303,14 +448,15 @@ function showResult() {
   let emoji = "";
 
   if (percentage >= 80) {
-    message = "Sangat Baik! Anda sangat menguasai materi sejarah Indonesia.";
-    emoji = "🎉";
+    message = "Selamat! Anda sangat menguasai materi Sejarah Indonesia.";
+    emoji = "🏆";
   } else if (percentage >= 60) {
-    message = "Baik! Anda cukup memahami sejarah Indonesia.";
-    emoji = "👍";
+    message = "Cukup baik! Anda cukup memahami materi Sejarah Indonesia.";
+    emoji = "😊";
   } else {
-    message = "Anda perlu mempelajari lebih lanjut tentang sejarah Indonesia.";
-    emoji = "📚";
+    message =
+      "Yah sayang sekali...Anda perlu mempelajari tentang Sejarah Indonesia.";
+    emoji = "🙁";
   }
 
   resultText.innerHTML = `
